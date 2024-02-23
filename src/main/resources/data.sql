@@ -1,1 +1,1 @@
-INSERT INTO USERS (ID, name, STATUS) VALUES (123, 'tomas', 0);
+INSERT INTO USERS (id, username, email, password, role) VALUES (0, 'admin', 'admin@gmail.com', 'admin1', 'admin');

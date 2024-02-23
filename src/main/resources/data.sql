@@ -1,0 +1,1 @@
+INSERT INTO USERS (ID, name, STATUS) VALUES (123, 'tomas', 0);

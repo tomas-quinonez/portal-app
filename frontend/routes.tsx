@@ -5,6 +5,7 @@ import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 const AboutView = lazy(async () => import('Frontend/views/about/AboutView.js'));
 const ApplicationView = lazy(async () => import('Frontend/views/application/ApplicationView.js'));
+const OrganisationView = lazy(async () => import('Frontend/views/organisation/OrganisationView.js'));
 
 export const routes = [
   {
@@ -13,7 +14,8 @@ export const routes = [
     children: [
       { path: '/', element: <HelloWorldView />, handle: { title: 'Hello World' } },
       { path: '/about', element: <AboutView />, handle: { title: 'About' } },
-      { path: '/applications', element: <ApplicationView />, handle: { title: 'Aplicaciones' } },
+      { path: '/abm/applications', element: <ApplicationView />, handle: { title: 'Aplicaciones' } },
+      { path: '/abm/organisations', element: <OrganisationView />, handle: { title: 'Organismos' } },
     ],
   },
 ] as RouteObject[];

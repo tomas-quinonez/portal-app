@@ -27,8 +27,11 @@ export default function MainLayout() {
             <NavLink className={navLinkClasses} to="/about">
               About
             </NavLink>
-            <NavLink className={navLinkClasses} to="/applications">
+            <NavLink className={navLinkClasses} to="/abm/applications">
               Aplicaciones
+            </NavLink>
+            <NavLink className={navLinkClasses} to="/abm/organisations">
+              Organimos
             </NavLink>
           </nav>
         </header>

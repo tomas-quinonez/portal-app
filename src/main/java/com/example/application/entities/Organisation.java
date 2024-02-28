@@ -36,7 +36,7 @@ public class Organisation {
     @NotBlank(message = "Debe completar el campo")
     @Email(message = "Por favor ingrese un correo electrónico válido")
     private String email;
-    
+
     public Organisation(
             @Positive(message = "Debe ingresar un número mayor a 0") @Max(value = 1000, message = "El código debe ser menor a 1000") int code,
             @NotBlank(message = "Debe completar el campo") @Pattern(regexp = "^[a-zñáéíóúA-ZÁÉÍÓÚÑ ]+$", message = "El nombre debe contener solo caracteres") String name,
@@ -101,5 +101,5 @@ public class Organisation {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
 }

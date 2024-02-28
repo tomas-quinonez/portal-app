@@ -4,6 +4,7 @@ import Placeholder from 'Frontend/components/placeholder/Placeholder.js';
 import { useRouteMetadata } from 'Frontend/util/routing.js';
 import { Suspense, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { TestEndpointService } from "Frontend/generated/endpoints";
 
 const navLinkClasses = ({ isActive }: any) => {
   return `block rounded-m p-s ${isActive ? 'bg-primary-10 text-primary' : 'text-body'}`;
@@ -14,6 +15,10 @@ export default function MainLayout() {
   useEffect(() => {
     document.title = currentTitle;
   }, [currentTitle]);
+
+  useEffect(() => {
+    //TestEndpointService.saySomething('hola').then(m => alert(m));
+  })
 
   return (
     <AppLayout primarySection="drawer">
@@ -33,10 +38,15 @@ export default function MainLayout() {
             <NavLink className={navLinkClasses} to="/abm/organisations">
               Organimos
             </NavLink>
+            <NavLink className={navLinkClasses} to="/abm/users">
+              Usuarios
+            </NavLink>
+            <NavLink className={navLinkClasses} to="/myapplications">
+              Mis Aplicaciones
+            </NavLink>
           </nav>
         </header>
       </div>
-
       <DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>
       <h2 slot="navbar" className="text-l m-0">
         {currentTitle}

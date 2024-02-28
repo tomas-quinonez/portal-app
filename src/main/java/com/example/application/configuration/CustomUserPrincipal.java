@@ -29,7 +29,8 @@ public class CustomUserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.<GrantedAuthority>singletonList(new SimpleGrantedAuthority(this.user.getRole()));
+        return Collections.<GrantedAuthority>singletonList(
+                new SimpleGrantedAuthority("ROLE_" + this.user.getRole().toString().toUpperCase()));
     }
 
     @Override

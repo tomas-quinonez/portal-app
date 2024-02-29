@@ -76,7 +76,8 @@
     "@hilla/generator-typescript-plugin-subtypes": "$@hilla/generator-typescript-plugin-subtypes",
     "@hilla/react-crud": "$@hilla/react-crud",
     "@hilla/generator-typescript-plugin-backbone": "$@hilla/generator-typescript-plugin-backbone",
-    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli"
+    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli",
+    "@react-pdf/renderer": "$@react-pdf/renderer"
   },
   "vaadin": {
     "dependencies": {
@@ -120,6 +121,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "8de8864bb72925318364f29204499643ea889f38508f12c6e0462b3d4e433802"
+    "hash": "e3588138080293ded7ed678de384c778bd325f30ccab6491f7aa57e27c4cb1c2"
   }
 }

@@ -18,6 +18,8 @@ import { set } from "@polymer/polymer/lib/utils/path";
 import { VerticalLayout } from "@hilla/react-components/VerticalLayout.js";
 import { Icon } from "@hilla/react-components/Icon.js";
 import { DatePicker } from "@hilla/react-components/DatePicker.js";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import PDFDocument from "Frontend/PDFDocument";
 
 export default function ApplicationView() {
 
@@ -31,6 +33,11 @@ export default function ApplicationView() {
         <div className="p-m">
             <h1>Mis Aplicaciones</h1>
             <hr />
+            <PDFDownloadLink document={<PDFDocument />} fileName={"resume.pdf"}>
+                <Button className="px-4">
+                    Download
+                </Button>
+            </PDFDownloadLink>
             <HorizontalLayout theme="margin spacing padding filled">
                 {apps.map((app, idx) => {
                     return (<VerticalLayout style={{ backgroundColor: 'lightskyblue ', alignItems: 'center' }} theme="margin spacing padding" key={app.id}>

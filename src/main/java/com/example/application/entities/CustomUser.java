@@ -3,6 +3,8 @@ package com.example.application.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -133,7 +135,8 @@ public class CustomUser {
     }
 
     public void setPassword(String password) {
-        this.password = "{noop}" + password;
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+        this.password = encoder.encode(password);;
     }
 
     public Role getRole() {

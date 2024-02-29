@@ -7,9 +7,11 @@ INSERT INTO "ORGANISATION" (id, code, name, address, phone, email) VALUES
     
 
 INSERT INTO "CUSTOM_USER" (id, name, username, lastname, dni, address, phone, email, user_type, organisation, password, role, enabled) VALUES 
-    (40, 'tomas', 'admin', 'q', '41222222', 'Las Grutas 123', '2999999999', 'admin@gmail.com', 'INTERNO', 101, '{noop}admin', 'admin', true);
+    (40, 'tomas', 'admin', 'q', '41222222', 'Las Grutas 123', '2999999999', 'admin@gmail.com', 'INTERNO', 101, 
+    '$2y$11$3oS7lPxr.atYKpiz/.nqfOjbZZWX56WJhFvpcv4QV3DhTROdKYJF.', 'admin', true);
 INSERT INTO "CUSTOM_USER" (id, name, username, lastname, dni, address, phone, email, user_type, organisation, password, role, enabled) VALUES 
-    (25, 'user1', 'user', 'q', '41222222', 'Las Grutas 123', '2999999999', 'admin@gmail.com', 'INTERNO', 250, '{noop}user', 'user' ,true);
+    (25, 'user1', 'user', 'q', '41222222', 'Las Grutas 123', '2999999999', 'admin@gmail.com', 'INTERNO', 250, 
+    '$2y$11$GUeE.QXVWq5Brt7wE8lNju0gKR8Mx272Ure0Q.V6Smo/lQCfo6B8.', 'user' ,true);
 
 
 INSERT INTO "APPLICATION" (id, code, name) VALUES (126, 12, 'Compras');

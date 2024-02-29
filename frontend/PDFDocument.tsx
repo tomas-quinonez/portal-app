@@ -25,6 +25,15 @@ export default function PDFDocument() {
         ApplicationService.findAll().then(apps => setApps(apps));
     }, [])
 
+    const getDate = () => {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        return dd + '/' + mm + '/' + yyyy;
+    };
+
+
     const styles = StyleSheet.create({
         body: {
             paddingTop: 35,
@@ -74,7 +83,7 @@ export default function PDFDocument() {
     return (
         <Document title='Lista de Usuarios Autorizados por Aplicación'>
             <Page size="A4" style={styles.body}>
-                <Text style={styles.title}>Lista de Usuarios Autorizados por Aplicación</Text>
+                <Text style={styles.title}>Lista de Usuarios Autorizados por Aplicación {getDate()}</Text>
                 <View style={{ flexDirection: "column", width: 400, marginTop: 20 }}>
                     {
                         apps.map((app, id) => {
@@ -82,7 +91,7 @@ export default function PDFDocument() {
                                 <View key={id} style={{ flexDirection: "column", marginBottom: 4 }}>
                                     <Text style={styles.subtitle}>- {app.name}:</Text>
                                     {(typeof app.customUsers !== 'undefined' && app.customUsers.length > 0) ?
-                                        app.customUsers?.map((user, id) => {
+                                        app.customUsers?.map((user: any, id: any) => {
                                             return (
                                                 <View key={id} style={{ flexDirection: "row", marginBottom: 4 }}>
                                                     <Text style={{ marginHorizontal: 8 }}>•</Text>

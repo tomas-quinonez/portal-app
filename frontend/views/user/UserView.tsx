@@ -82,17 +82,28 @@ export default function UserView() {
                         model={CustomUserDtoModel}
                         gridProps={{
                             noHeaderFilters: true,
-                            visibleColumns: ['username', 'password', 'orgName', 'name', 'lastname', 'email', 'dni', 'address', 'phone', 'user_type', 'organisation', 'role'],
+                            visibleColumns: ['username', 'password', 'name', 'lastname', 'email', 'dni', 'address', 'phone', 'user_type', 'organisation', 'role'],
                             columnOptions: {
+                                username: { header: 'Usuario' },
+                                name: { header: 'Nombre' },
+                                lastname: { header: 'Apellido' },
+                                email: { header: 'Email' },
+                                dni: { header: 'DNI' },
+                                address: { header: 'Dirección' },
+                                phone: { header: 'Teléfono' },
+                                user_type: { header: 'Tipo Usuario' },
                                 organisation: {
+                                    header: 'Organismo Perteneciente',
                                     renderer: ({ item }: { item: CustomUser }) => {
                                         return <span>{item.organisation?.name}</span>
                                     }
                                 },
                                 password: {
+                                    header: 'Contraseña',
                                     renderer: ({ item }: { item: CustomUser }) =>
                                         <PasswordState customUser={item} />
-                                }
+                                },
+                                role: { header: 'Rol' }
                             },
                         }}
                         formProps={{

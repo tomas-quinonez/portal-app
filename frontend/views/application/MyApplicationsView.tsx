@@ -25,21 +25,25 @@ export default function ApplicationView() {
         <div className="p-m">
             <h1>Mis Aplicaciones</h1>
             <hr />
-            <HorizontalLayout theme="margin spacing padding filled">
-                {apps.map((app, idx) => {
-                    return (<VerticalLayout style={{ backgroundColor: 'lightskyblue ', alignItems: 'center' }} theme="margin spacing padding" key={app.id}>
-                        <header>
-                            <h2>Aplicación {app.name}</h2>
-                        </header>
-                        <section aria-labelledby="personal-title">
-                            <span><h2>Código: {app.code}</h2></span>
-                        </section>
-                        <a href="/">
-                            <Button theme="primary large">Ingresar <Icon icon="vaadin:paperplane-o" /></Button>
-                        </a>
-                    </VerticalLayout>)
-                })}
-            </HorizontalLayout>
+            {apps.length > 0 ?
+                <HorizontalLayout theme="margin spacing padding filled">
+                    {apps.map((app, idx) => {
+                        return (<VerticalLayout style={{ backgroundColor: 'lightskyblue ', alignItems: 'center' }} theme="margin spacing padding" key={app.id}>
+                            <header>
+                                <h2>Aplicación {app.name}</h2>
+                            </header>
+                            <section aria-labelledby="personal-title">
+                                <span><h2>Código: {app.code}</h2></span>
+                            </section>
+                            <a href="/">
+                                <Button theme="primary large">Ingresar <Icon icon="vaadin:paperplane-o" /></Button>
+                            </a>
+                        </VerticalLayout>)
+                    })}
+                </HorizontalLayout>
+                :
+                <h2>Usted no tiene aplicaciones autorizadas</h2>
+            }
         </div>
     );
 }

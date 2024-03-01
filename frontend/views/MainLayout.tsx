@@ -25,6 +25,10 @@ export default function MainLayout() {
 		document.title = currentTitle;
 	}, [currentTitle]);
 
+	const logout = () => {
+		const url = window.location.protocol + '//' + window.location.host + '/logout';
+		window.location.replace(url);
+	}
 
 	return (
 		<AppLayout primarySection="drawer">
@@ -69,6 +73,7 @@ export default function MainLayout() {
 							<></>
 						}
 					</nav>
+					<Button theme="primary error" onClick={logout}>Salir</Button>
 				</header>
 			</div>
 			<DrawerToggle slot="navbar" aria-label="Menu toggle"></DrawerToggle>

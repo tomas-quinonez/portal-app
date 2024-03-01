@@ -20,6 +20,10 @@ Para realizar pruebas sobre el programa, se definieron dos usuarios en la base d
   - Usuario: user
   - Contraseña: user
 
+# Datos
+
+La sentencias *SQL* para insertar los valores inicialies en la base de datos en memoria se encuentran en: src\main\resources\data.sql
+
 
 # Ejecución
 
@@ -56,17 +60,6 @@ Requisitos:
 -  JDK 17 o posterior
 
 Ejecutar en una termimal los siguientes comandos desde la carpeta raíz de proyecto para ejecutar y desplegar localmente el proyecto con puerto 8080 (http://localhost:8080/):
-
-### Método 2.1:
-
-```
-$ mvn package -Pproduction
-$ java -jar target/*.jar
-```
-
-### Método 2.2:
-
-Ejecutar el siguiente comando en una termial:
 
 - En Windows:
 ```

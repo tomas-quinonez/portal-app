@@ -31,6 +31,7 @@ Clonar el repositorio ejecutando el siguiente comando en una terminal:
 
 ```
 $ git clone https://github.com/tomas-quinonez/portal-app.git
+$ cd portal-app
 ```
 
 Para la ejecución del aplicativo se dispone de dos métodos a elegir:

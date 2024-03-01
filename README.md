@@ -22,7 +22,7 @@ Para realizar pruebas sobre el programa, se definieron dos usuarios en la base d
 
 # Datos
 
-La sentencias *SQL* para insertar los valores inicialies en la base de datos en memoria se encuentran en: src\main\resources\data.sql
+Las sentencias *SQL* para insertar los valores iniciales en la base de datos en memoria se encuentran en: src\main\resources\data.sql
 
 
 # Ejecución
@@ -51,6 +51,12 @@ Para detener el contenedor ejecutar el siguiente comando en una terminal:
 
 ```
 $ docker stop portal-app
+```
+
+Para eliminar el contenedor ejecutar el siguiente comando:
+
+```
+$ docker rm portal-app
 ```
 
 ## Método 2

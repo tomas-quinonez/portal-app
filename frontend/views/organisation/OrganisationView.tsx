@@ -71,10 +71,7 @@ export default function OrganisationView() {
                                 email: { label: 'Email' },
                             },
                             onSubmitError({ error }) {
-                                Notification.show('' + error.detail, { theme: 'error' });
-                                Notification.show('' + error.message, { theme: 'error' });
-                                Notification.show('' + error.name, { theme: 'error' });
-                                Notification.show('' + error.type, { theme: 'error' });
+                                Notification.show('Ocurrió un error al realizar el alta.', { theme: 'error' });
                             },
                             onDeleteError({ error }) {
                                 Notification.show('Ocurrió un error al realizar la baja.', { theme: 'error' });

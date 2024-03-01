@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import dev.hilla.Nullable;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +25,7 @@ public class Application {
 
     @Positive(message = "Debe ingresar un número mayor a 0")
     @Max(value = 1000, message = "El código debe ser menor a 1000")
+    @Column(unique = true)
     private int code;
 
     @NotNull

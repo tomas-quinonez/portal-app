@@ -12,9 +12,6 @@ INSERT INTO "CUSTOM_USER" (id, name, username, lastname, dni, address, phone, em
 INSERT INTO "CUSTOM_USER" (id, name, username, lastname, dni, address, phone, email, user_type, organisation, password, role, enabled) VALUES 
     (25, 'Usuario', 'user', 'prueba', '38123456', 'Jujuy 500', '2888888888', 'user@gmail.com', 'EXTERNO', 250, 
     '$2y$11$GUeE.QXVWq5Brt7wE8lNju0gKR8Mx272Ure0Q.V6Smo/lQCfo6B8.', 'user', true);
-INSERT INTO "CUSTOM_USER" (id, name, username, lastname, dni, address, phone, email, user_type, organisation, password, role, enabled) VALUES 
-    (98, 'Pepe', 'pepe', 'Lopez', '24951753', 'Leloir 650', '154444444', 'pepe@gmail.com', 'INTERNO', 250, 
-    NULL, 'user', true);
 
 
 INSERT INTO "APPLICATION" (id, code, name) VALUES (126, 12, 'Compras');
@@ -27,3 +24,4 @@ INSERT INTO "HAS_APP" (APP_ID, USER_ID) VALUES (106, 40);
 INSERT INTO "HAS_APP" (APP_ID, USER_ID) VALUES (211, 40);
 INSERT INTO "HAS_APP" (APP_ID, USER_ID) VALUES (55, 40);
 INSERT INTO "HAS_APP" (APP_ID, USER_ID) VALUES (106, 25);
+INSERT INTO "HAS_APP" (APP_ID, USER_ID) VALUES (55, 25);

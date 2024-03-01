@@ -16,7 +16,7 @@ export default function UserView() {
     const [items, setItems] = useState<String[]>([]);
     const [dialogOpened, setDialogOpened] = useState<boolean>(false);
     const [user, setUser] = useState<CustomUser>();
-    const [isButtonEnabled, setButtonEnabled] = useState<boolean>(false);
+    const [isButtonEnabled, setButtonEnabled] = useState<boolean>(true);
     const [validPassword, setValidPassword] = useState<string>('');
 
     const { state, login } = useAuth();

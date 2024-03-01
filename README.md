@@ -44,7 +44,7 @@ Ejecutar en una termimal los siguientes comandos desde la carpeta raíz de proye
 
 ```
 $ docker build -t portal-app .
-$ docker run --name portal-app -p 127.0.0.1:8080:8080 portal-app
+$ docker run --name portal-app -d -p 127.0.0.1:8080:8080 portal-app
 ```
 
 Para detener el contenedor ejecutar el siguiente comando en una terminal: 

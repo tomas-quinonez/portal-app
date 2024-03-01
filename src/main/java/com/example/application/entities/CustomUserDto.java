@@ -13,7 +13,8 @@ public record CustomUserDto(
         Long id,
         @NotBlank(message = "Debe completar el campo") @Pattern(regexp = "^[a-zñáéíóúA-ZÁÉÍÓÚÑ\s]+$", message = "El nombre debe contener solo caracteres") String name,
         @Column(unique = true) @NotBlank(message = "Debe completar el campo") String username,
-        @NotBlank(message = "Debe completar el campo") @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,20}$", message = "La contraseña debe contener entre 8 y 20 caracteres, al menos 1 dígito, 1 letra en minúscula, 1 letra en mayúscula y no debe contener espacios") String password,
+        //@NotBlank(message = "Debe completar el campo") @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,20}$", message = "La contraseña debe contener entre 8 y 20 caracteres, al menos 1 dígito, 1 letra en minúscula, 1 letra en mayúscula y no debe contener espacios") 
+        String password,
         @NotBlank(message = "Debe completar el campo") @Pattern(regexp = "^[a-zñáéíóúA-ZÁÉÍÓÚÑ\s]+$", message = "El apellido debe contener solo caracteres") String lastname,
         @NotBlank(message = "Debe completar el campo") @Pattern(regexp = "^[0-9]*$", message = "El DNI solo puede contener dígitos") String dni,
         String address,

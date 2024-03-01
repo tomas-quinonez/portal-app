@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -72,7 +73,7 @@ public class CustomUser {
     @JoinColumn(name = "organisation", referencedColumnName = "id")
     private Organisation organisation;
 
-    @NotBlank(message = "Debe completar el campo")
+    //@NotBlank(message = "Debe completar el campo")
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -86,7 +87,7 @@ public class CustomUser {
     private Set<Application> applications = new HashSet<Application>();
 
     public CustomUser(String name, String username, String lastname, String dni, String address, String phone,
-            String email, UserType user_type, Organisation organisation, String password, Role role, boolean enabled) {
+            String email, UserType user_type, Organisation organisation, @Nullable String password, Role role, boolean enabled) {
         this.name = name;
         this.username = username;
         this.lastname = lastname;
@@ -135,8 +136,7 @@ public class CustomUser {
     }
 
     public void setPassword(String password) {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-        this.password = encoder.encode(password);;
+        this.password = password;;
     }
 
     public Role getRole() {

@@ -2,13 +2,12 @@ import { AutoCrud } from "@hilla/react-crud";
 import { Notification } from '@hilla/react-components/Notification.js';
 import { OrganisationService } from "Frontend/generated/endpoints";
 import OrganisationModel from "Frontend/generated/com/example/application/entities/OrganisationModel";
-import Organisation from "Frontend/generated/com/example/application/entities/Organisation";
 import NoAuthorizationView from "../NoAuthorizationView";
 import { useAuth } from "Frontend/auth";
 
 export default function OrganisationView() {
 
-    const { state, login } = useAuth();
+    const { state } = useAuth();
 
     return (
         <>

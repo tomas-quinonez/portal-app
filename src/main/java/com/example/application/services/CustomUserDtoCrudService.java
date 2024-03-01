@@ -48,7 +48,7 @@ public class CustomUserDtoCrudService implements CrudService<CustomUserDto, Long
                 : new CustomUser();
         customUser.setName(value.name());
         customUser.setUsername(value.username());
-        customUser.setPassword(value.password());
+        //customUser.setPassword();
         customUser.setLastname(value.lastname());
         customUser.setDni(value.dni());
         customUser.setAddress(value.address());

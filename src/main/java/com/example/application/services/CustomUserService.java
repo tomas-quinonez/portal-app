@@ -2,8 +2,10 @@ package com.example.application.services;
 
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.application.entities.Application;
 import com.example.application.entities.CustomUser;
@@ -31,5 +33,22 @@ public class CustomUserService
         String username = VaadinRequest.getCurrent().getUserPrincipal().getName();
         CustomUser customUser = this.customUserRepository.findByUsername(username);
         return customUser.getApplications();
+    }
+
+    public boolean setPasswordById(String username, String password) {
+        CustomUser customUser = this.customUserRepository.findByUsername(username);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+
+        String regexpr = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\\\S+$).{8,20}$";
+        boolean p = Pattern.matches(regexpr, password);
+
+        if (p) {
+            customUser.setPassword(encoder.encode(password));
+            this.customUserRepository.save(customUser);
+            return true;
+        }
+
+        return false;
+
     }
 }

@@ -71,7 +71,7 @@ export default function OrganisationView() {
                                 email: { label: 'Email' },
                             },
                             onSubmitError({ error }) {
-                                Notification.show('Ocurrió un error al realizar el alta.', { theme: 'error' });
+                                Notification.show('Ocurrió un error al realizar el alta. Posible repetición de valor único.', { theme: 'error' });
                             },
                             onDeleteError({ error }) {
                                 Notification.show('Ocurrió un error al realizar la baja.', { theme: 'error' });

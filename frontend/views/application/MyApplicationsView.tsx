@@ -14,11 +14,7 @@ export default function ApplicationView() {
     const { state } = useAuth();
 
     useEffect(() => {
-        if (state.user?.authorities.includes('ROLE_ADMIN')) {
-            ApplicationService.findAll().then((apps: Application[]) => setApps(apps))
-        } else {
-            CustomUserService.getAppsByUsername().then((apps: Application[]) => setApps(apps));
-        }
+        CustomUserService.getAppsByUsername().then((apps: Application[]) => setApps(apps));
     }, []);
 
     return (

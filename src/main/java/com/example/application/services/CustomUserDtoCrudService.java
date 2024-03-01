@@ -1,8 +1,10 @@
 package com.example.application.services;
 
+import com.example.application.entities.Application;
 import com.example.application.entities.CustomUser;
 import com.example.application.entities.CustomUserDto;
 import com.example.application.entities.Organisation;
+import com.example.application.repositories.ApplicationRepository;
 import com.example.application.repositories.CustomUserRepository;
 import com.example.application.repositories.OrganisationRepository;
 
@@ -16,27 +18,30 @@ import jakarta.annotation.security.RolesAllowed;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
 @BrowserCallable
 @RolesAllowed({ "ROLE_ADMIN" })
 public class CustomUserDtoCrudService implements CrudService<CustomUserDto, Long> {
+
     private final CustomUserRepository customUserRepository;
     private final OrganisationRepository organisationRepository;
+    private final ApplicationRepository applicationRepository;
 
     public CustomUserDtoCrudService(CustomUserRepository customUserRepository,
-            OrganisationRepository organisationRepository) {
+            OrganisationRepository organisationRepository,
+            ApplicationRepository applicationRepository) {
         this.customUserRepository = customUserRepository;
         this.organisationRepository = organisationRepository;
+        this.applicationRepository = applicationRepository;
     }
 
     @Override
     @Nonnull
     @RolesAllowed({ "ROLE_ADMIN" })
     public List<@Nonnull CustomUserDto> list(Pageable pageable, @Nullable Filter filter) {
-        // Basic list implementation that only covers pagination,
-        // but not sorting or filtering
         Page<CustomUser> products = customUserRepository.findAll(pageable);
         return products.stream().map(CustomUserDto::fromEntity).toList();
     }
@@ -62,6 +67,12 @@ public class CustomUserDtoCrudService implements CrudService<CustomUserDto, Long
         Optional<Organisation> org = this.organisationRepository.findByName(value.orgName());
         if (org.isPresent()) {
             customUser.setOrganisation(org.get());
+        }
+
+        // Si el usuario tiene rol admin, asignar todas las apps
+        if (value.role().name().equalsIgnoreCase("admin")) {
+            List<Application> applications = this.applicationRepository.findAll();
+            customUser.setApplications(new HashSet<>(applications));
         }
 
         return CustomUserDto.fromEntity(customUserRepository.save(customUser));

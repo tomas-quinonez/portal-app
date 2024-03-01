@@ -28,7 +28,6 @@ public class UserInfoService {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
-        System.out.println(authorities.toString());
         return new UserInfo(auth.getName(), authorities);
     }
 

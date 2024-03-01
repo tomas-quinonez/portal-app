@@ -38,17 +38,9 @@ public class CustomUserService
     public boolean setPasswordById(String username, String password) {
         CustomUser customUser = this.customUserRepository.findByUsername(username);
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
-
-        String regexpr = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\\\S+$).{8,20}$";
-        boolean p = Pattern.matches(regexpr, password);
-
-        if (p) {
-            customUser.setPassword(encoder.encode(password));
-            this.customUserRepository.save(customUser);
-            return true;
-        }
-
-        return false;
+        customUser.setPassword(encoder.encode(password));
+        this.customUserRepository.save(customUser);
+        return true;
 
     }
 }

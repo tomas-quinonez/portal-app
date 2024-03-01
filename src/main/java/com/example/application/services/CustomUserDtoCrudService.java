@@ -59,10 +59,6 @@ public class CustomUserDtoCrudService implements CrudService<CustomUserDto, Long
         customUser.setEnabled(true);
         customUser.setOrganisation(null);
 
-        if (value.id() != null && value.id() > 0) {
-            customUser.setPassword(null);
-        }
-
         Optional<Organisation> org = this.organisationRepository.findByName(value.orgName());
         if (org.isPresent()) {
             customUser.setOrganisation(org.get());

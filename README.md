@@ -6,7 +6,7 @@ utilizar.
 
 # Herramientas
 
-Este proyecto fue desarrollado con el framework para Java denominado *Hilla*, utilizando *React* para el frontend.
+Este proyecto fue desarrollado con el framework para Java denominado *Hilla*, utilizando *Spring Boot* para el backend y *React* para el frontend.
 
 # Usuarios
 

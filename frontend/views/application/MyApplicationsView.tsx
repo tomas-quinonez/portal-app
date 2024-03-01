@@ -5,13 +5,20 @@ import Application from "Frontend/generated/com/example/application/entities/App
 import { HorizontalLayout } from "@hilla/react-components/HorizontalLayout.js";
 import { VerticalLayout } from "@hilla/react-components/VerticalLayout.js";
 import { Icon } from "@hilla/react-components/Icon.js";
+import { useAuth } from "Frontend/auth";
 
 export default function ApplicationView() {
 
     const [apps, setApps] = useState<Application[]>([]);
 
+    const { state } = useAuth();
+
     useEffect(() => {
-        CustomUserService.getAppsByUsername().then((apps) => setApps(apps));
+        if (state.user?.authorities.includes('ROLE_ADMIN')) {
+            ApplicationService.findAll().then((apps: Application[]) => setApps(apps))
+        } else {
+            CustomUserService.getAppsByUsername().then((apps: Application[]) => setApps(apps));
+        }
     }, []);
 
     return (

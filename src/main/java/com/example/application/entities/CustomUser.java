@@ -74,6 +74,7 @@ public class CustomUser {
     private Organisation organisation;
 
     //@NotBlank(message = "Debe completar el campo")
+    @Nullable
     private String password;
 
     @Enumerated(EnumType.STRING)

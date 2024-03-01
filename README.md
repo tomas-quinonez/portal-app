@@ -6,7 +6,19 @@ utilizar.
 # Herramientas
 
 Este proyecto fue desarrollado con el framework para Java denominado *Hilla*, utilizando *React* para el frontend.
-The project is built with the Java framework *Spring boot*,
+
+# Usuarios
+
+Para realizar pruebas sobre el programa, se definieron dos usuarios en la base de datos en memoria:
+
+- Usuario 1 (con rol de administrador):
+  - Usuario: admin
+  - Contraseña: admin
+
+- Usuario 2 (con rol de usuario):
+  - Usuario: user
+  - Contraseña: user
+
 
 # Ejecución
 

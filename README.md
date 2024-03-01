@@ -1,4 +1,5 @@
 # Descripción
+
 Se necesita desarrollar una aplicación denominada portal del usuario, en donde cada
 usuario al iniciar sesión tenga disponible todas las aplicaciones en las que está autorizado a
 utilizar.
@@ -22,7 +23,13 @@ Para realizar pruebas sobre el programa, se definieron dos usuarios en la base d
 
 # Ejecución
 
-Para la ejecución del aplicativo se dispone de dos métodos a elegir.
+Clonar el repositorio ejecutando el siguiente comando en una terminal:
+
+```
+$ git clone https://github.com/tomas-quinonez/portal-app.git
+```
+
+Para la ejecución del aplicativo se dispone de dos métodos a elegir:
 
 ## Método 1
 
